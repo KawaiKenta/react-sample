@@ -1,8 +1,8 @@
 import { useState } from "react"
 import Changer from "./Changer";
 
-const Counter = () => {
-    const [count, setCount] = useState(0);
+const Counter = ({init}: {init: number}) => {
+    const [count, setCount] = useState(init);
     const update = (step: number) => setCount(c => c + step);
     const reset = () => setCount(0);
     return (

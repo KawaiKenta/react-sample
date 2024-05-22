@@ -9,11 +9,13 @@ import { books } from './components/props/books';
 import Counter from './components/counter/Counter'
 import LazyBasic from './components/suspence/LazyBasic'
 import SuspenseSimple from './components/suspence/SuspsenseSimple'
+import PortalBasic from './components/portal/PortalBasic'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <div id="dialog"></div>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -34,10 +36,11 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <Counter />
+      <Counter init={0}/>
       <BookList books={books}>Hello this is book I bought yesterday!</BookList>
       <LazyBasic />
       <SuspenseSimple />
+      <PortalBasic/>
     </>
   )
 }
