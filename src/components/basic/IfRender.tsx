@@ -3,7 +3,12 @@ const IfRender = () => {
         first: "John",
         last: "Doe",
         notes: "hello world",
+    } satisfies {
+        first: undefined | string,
+        last: string,
+        notes: undefined | string,
     };
+    
     const isFormValid = false;
     return (
         <>
@@ -16,6 +21,7 @@ const IfRender = () => {
                 <i>No Name</i>
             )}
             {contact.notes ? <p>{contact.notes}</p> : null}
+            {/* 左辺がtrueなら右も判定される(true), falseならパスする */}
             {isFormValid && <button type="submit">Submit</button>}
         </>
     )
